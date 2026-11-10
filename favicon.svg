@@ -1,1 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><defs><clipPath id="portrait"><rect width="64" height="64"/></clipPath></defs><image href="/manus-storage/WhatsAppImage2026-11-01at8.22.26PM_9e300f97.jpeg" x="0" y="0" width="64" height="64" preserveAspectRatio="xMidYMid slice" clip-path="url(#portrait)"/><rect x="1" y="1" width="62" height="62" fill="none" stroke="#171717" stroke-width="2"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 100 100">
+  <title>Sumantra Das — S mark</title>
+  <rect x="5" y="5" width="90" height="90" rx="28" fill="#000000" />
+  <path d="M 68 32 C 68 14, 32 14, 32 32 C 32 54, 68 46, 68 68 C 68 86, 32 86, 32 68" fill="none" stroke="#fdfbf7" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+</svg>

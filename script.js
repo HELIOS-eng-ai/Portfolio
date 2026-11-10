@@ -65,6 +65,23 @@ themeToggle?.addEventListener("click", () => {
   applyTheme(nextTheme, true);
 });
 
+const portraitToggle = document.querySelector(".portrait-toggle");
+if (portraitToggle) {
+  const portrait = document.getElementById(portraitToggle.getAttribute("aria-controls"));
+  const portraitCover = document.querySelector(".portrait-cover");
+  const portraitToggleLabel = portraitToggle.querySelector(".portrait-toggle-label");
+
+  portraitToggle.addEventListener("click", () => {
+    if (!portrait || !portraitCover || !portraitToggleLabel) return;
+    const shouldReveal = portraitToggle.getAttribute("aria-pressed") !== "true";
+    portrait.hidden = !shouldReveal;
+    portraitCover.hidden = shouldReveal;
+    portraitToggle.setAttribute("aria-pressed", String(shouldReveal));
+    portraitToggle.setAttribute("aria-label", shouldReveal ? "Hide portrait" : "Reveal portrait");
+    portraitToggleLabel.textContent = shouldReveal ? "HIDE PHOTO" : "REVEAL PHOTO";
+  });
+}
+
 document.querySelectorAll(".certificate-title[data-certificate-url]").forEach((heading) => {
   const rawUrl = heading.dataset.certificateUrl.trim();
   if (!rawUrl) return;
