@@ -124,6 +124,8 @@ h1 { max-width: 1000px; margin-bottom: 38px; font-size: clamp(68px, 10.8vw, 164p
 .project-number { padding-top: 9px; color: var(--muted); }
 .project-title-row { display: flex; align-items: start; justify-content: space-between; gap: 20px; }
 .project-title-row h3 { margin-bottom: 14px; font-size: clamp(27px, 3.7vw, 50px); font-weight: 500; letter-spacing: -.065em; line-height: 1.02; }
+.project-title-link { color: inherit; text-decoration: none; transition: color .2s ease; }
+.project-title-link:hover { color: var(--signal); }
 .status-tag { flex: none; padding: 7px 9px; border: 1px solid var(--signal); color: var(--signal); font-family: var(--mono); font-size: 8px; letter-spacing: .06em; }
 .status-outline { border-color: var(--rule); color: var(--muted); }
 .project-summary { max-width: 640px; margin-bottom: 29px; color: var(--body-muted); font-size: 16px; line-height: 1.55; }
@@ -131,7 +133,8 @@ h1 { max-width: 1000px; margin-bottom: 38px; font-size: clamp(68px, 10.8vw, 164p
 .project-specs > div { padding-top: 12px; border-top: 1px solid var(--soft-rule); }
 .spec-label { display: block; margin-bottom: 10px; color: var(--muted); font-size: 9px; }
 .project-specs p { margin-bottom: 0; font-size: 12px; line-height: 1.6; }
-.project-arrow { align-self: start; justify-self: end; color: var(--signal); font-size: 22px; }
+.project-arrow { align-self: start; justify-self: end; color: var(--signal); font-size: 22px; text-decoration: none; transition: transform .2s ease; }
+.project-arrow:hover { transform: translate(2px, -2px); }
 .research-card { padding-top: 37px; }
 .research-card .project-summary { max-width: 700px; }
 .research-card .project-specs { grid-template-columns: 2fr 1fr; }
@@ -192,6 +195,8 @@ h1 { max-width: 1000px; margin-bottom: 38px; font-size: clamp(68px, 10.8vw, 164p
 .certifications li { display: grid; grid-template-columns: 24px 1fr; gap: 10px; padding: 18px 0; border-bottom: 1px solid var(--rule); }
 .cert-mark { color: var(--signal); font-size: 14px; }
 .certifications h4 { margin-bottom: 5px; font-size: 13px; font-weight: 600; }
+.certificate-title a { color: inherit; text-decoration-color: var(--rule); text-decoration-thickness: 1px; text-underline-offset: 3px; transition: color .2s ease, text-decoration-color .2s ease; }
+.certificate-title a:hover, .certificate-title a:focus-visible { color: var(--signal); text-decoration-color: var(--signal); }
 .certifications li p { margin-bottom: 0; color: var(--muted); font-size: 11px; }
 
 .contact { padding-top: 26px; padding-bottom: 110px; background: var(--footer-bg); color: var(--footer-ink); transition: background-color .22s ease, color .22s ease; }

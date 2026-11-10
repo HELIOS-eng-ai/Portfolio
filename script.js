@@ -64,3 +64,23 @@ themeToggle?.addEventListener("click", () => {
   const nextTheme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
   applyTheme(nextTheme, true);
 });
+
+document.querySelectorAll(".certificate-title[data-certificate-url]").forEach((heading) => {
+  const rawUrl = heading.dataset.certificateUrl.trim();
+  if (!rawUrl) return;
+
+  let certificateUrl;
+  try {
+    certificateUrl = new URL(rawUrl, window.location.href);
+  } catch {
+    return;
+  }
+  if (certificateUrl.protocol !== "http:" && certificateUrl.protocol !== "https:") return;
+
+  const link = document.createElement("a");
+  link.href = certificateUrl.href;
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+  link.textContent = heading.textContent;
+  heading.replaceChildren(link);
+});
