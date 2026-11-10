@@ -82,6 +82,27 @@ if (portraitToggle) {
   });
 }
 
+document.querySelectorAll(".education-institution[data-institution-url]").forEach((heading) => {
+  const rawUrl = heading.dataset.institutionUrl.trim();
+  if (!rawUrl) return;
+
+  let institutionUrl;
+  try {
+    institutionUrl = new URL(rawUrl);
+  } catch {
+    return;
+  }
+  if (institutionUrl.protocol !== "http:" && institutionUrl.protocol !== "https:") return;
+
+  const link = document.createElement("a");
+  link.href = institutionUrl.href;
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+  link.setAttribute("aria-label", `${heading.textContent.trim()} (opens in a new tab)`);
+  link.textContent = heading.textContent;
+  heading.replaceChildren(link);
+});
+
 document.querySelectorAll(".certificate-title[data-certificate-url]").forEach((heading) => {
   const rawUrl = heading.dataset.certificateUrl.trim();
   if (!rawUrl) return;
